@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "ScamBlock",
+    "description": "Tor plugin to block scam onion sites",
+    "version": "0.1",
+    "content_scripts": [{
+        "matches": [
+            "file://*/*",
+            "http://*/*",
+            "https://*/*"
+        ],
+        "js": [
+            "content_script.js"
+        ],
+        "run_at": "document_start",
+        "all_frames": false
+    }],
+    "permissions": [
+        "storage",
+        "activeTab",
+        "webRequest",
+        "tabs"
+    ],
+    "web_accessible_resources": [
+        "alert.html"
+    ],
+    "icons": {
+        "48": "icon.png",
+        "96": "icon@2x.png"
+    }
+}
